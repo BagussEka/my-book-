@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="mobile-wrapper">
+        <!-- Header -->
+        <header class="header-section">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="brand-title">
+                    <div class="brand-icon"><i class="bi bi-book-half"></i></div>
+                    <span>My Book</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="user-profile-icon">
+                        <img src="profil/darth vader.webp" alt="Profil"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Section -->
+        <section class="summary-section">
+            <div>
+                <div class="summary-label" id="summaryCategoryLabel">Koleksi Fiksi</div>
+                <h5 class="summary-title" id="summaryTabHeading">Buku Terbaca</h5>
+            </div>
+            <div class="summary-badge">
+                <i class="bi bi-bookmark-check-fill me-1"></i>
+                <span id="bookCountBadge">3 Buku</span>
+            </div>
+        </section>
+
+        <!-- Search Box -->
+        <div class="search-box-section">
+            <div class="search-box">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Cari judul buku atau penulis..."
+                    autocomplete="off">
+            </div>
+        </div>
+
+        <!-- DAFTAR BUKU (RANCANGAN STATIS) -->
+        <main class="book-list-section" id="bookListContainer">
+
+            <!-- 1. CONTAINER FIKSI (Aktif default) -->
+            <div id="tab-Fiksi" class="tab-konten">
+                <div class="book-card">
+                    <div class="book-cover cover-fiksi"><i class="bi bi-book"></i></div>
+                    <div class="book-info">
+                        <h4 class="book-title" style="font-size: 1rem; margin-bottom: 0.2rem;">Kudus</h4>
+                        <div class="book-author" style="font-size: 0.85rem;"><i class="bi bi-pencil"></i> Brian Krisna
+                        </div>
+                        <span class="category-badge badge-fiksi"><i class="bi bi-tag-fill"></i> Fiksi</span>
+                    </div>
+                    <button class="btn-delete-book"><i class="bi bi-trash"></i></button>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover cover-fiksi" style="background: linear-gradient(145deg, #8b5cf6, #6366f1);">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title" style="font-size: 1rem; margin-bottom: 0.2rem;">Parable</h4>
+                        <div class="book-author" style="font-size: 0.85rem;"><i class="bi bi-pencil"></i> Brian Krisna
+                        </div>
+                        <span class="category-badge badge-fiksi"><i class="bi bi-tag-fill"></i> Fiksi</span>
+                    </div>
+                    <button class="btn-delete-book"><i class="bi bi-trash"></i></button>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover cover-fiksi" style="background: linear-gradient(145deg, #e11d48, #f43f5e);">
+                        <i class="bi bi-book-open"></i>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title" style="font-size: 1rem; margin-bottom: 0.2rem;">The Book of Almost</h4>
+                        <div class="book-author" style="font-size: 0.85rem;"><i class="bi bi-pencil"></i> Brian Krisna
+                        </div>
+                        <span class="category-badge badge-fiksi"><i class="bi bi-tag-fill"></i> Fiksi</span>
+                    </div>
+                    <button class="btn-delete-book"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- 2. CONTAINER NON FIKSI (Disembunyikan default dengan class d-none) -->
+            <div id="tab-NonFiksi" class="tab-konten d-none">
+                <div class="book-card">
+                    <div class="book-cover cover-nonfiksi"><i class="bi bi-journal-check"></i></div>
+                    <div class="book-info">
+                        <h4 class="book-title" style="font-size: 1rem; margin-bottom: 0.2rem;">Atomic Habits</h4>
+                        <div class="book-author" style="font-size: 0.85rem;"><i class="bi bi-pencil"></i> James Clear
+                        </div>
+                        <span class="category-badge badge-nonfiksi"><i class="bi bi-tag-fill"></i> Non Fiksi</span>
+                    </div>
+                    <button class="btn-delete-book"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- 3. CONTAINER WISHLIST (Disembunyikan default dengan class d-none) -->
+            <div id="tab-Wishlist" class="tab-konten d-none">
+                <div class="book-card">
+                    <div class="book-cover cover-wishlist"><i class="bi bi-star-fill"></i></div>
+                    <div class="book-info">
+                        <h4 class="book-title" style="font-size: 1rem; margin-bottom: 0.2rem;">Sapiens</h4>
+                        <div class="book-author" style="font-size: 0.85rem;"><i class="bi bi-pencil"></i> Yuval Noah
+                            Harari</div>
+                        <span class="category-badge badge-wishlist"><i class="bi bi-tag-fill"></i> Wishlist</span>
+                    </div>
+                    <button class="btn-delete-book"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Sistem Navigasi Bawah antar Kategori -->
+        <nav class="navigation-bar">
+
+            <!-- Tab 1: Fiksi -->
+            <div class="nav-item active" data-tab="Fiksi">
+                <i class="bi bi-journal-richtext"></i>
+                <span>Fiksi</span>
+            </div>
+
+            <!-- Tab 2: Non Fiksi (PASTIKAN data-tab="Non Fiksi") -->
+            <div class="nav-item" data-tab="Non Fiksi">
+                <i class="bi bi-journal-bookmark-fill"></i>
+                <span>Non Fiksi</span>
+            </div>
+
+            <!-- Tab 3: Wishlist (PASTIKAN data-tab="Wishlist") -->
+            <div class="nav-item" data-tab="Wishlist">
+                <i class="bi bi-stars"></i>
+                <span>Wishlist</span>
+            </div>
+
+        </nav>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>
