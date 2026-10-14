@@ -2,29 +2,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Data Buku Sesuai Permintaan (Menggunakan Gambar Lokal)
   const BUKU = [
     // Fiksi
-    { title: "Sisi Tergelap Surga", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/sisitergelap.jpeg" },
-    { title: "This Is Why I Need You", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/twih.jpg" },
-    { title: "Parable", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/parable.jpg" },
-    { title: "23:59", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/duatiga.jpg" },
-    { title: "Kudasai", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/kudasai.jpg" },
-    { title: "Seporsi Mie Ayam Sebelum Mati", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/mieayam.jpg" },
-    { title: "Bandung Menjelang Pagi", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/bandunng.jpg" },
-    { title: "The Match Breaker", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/THE-MATCHBREAKER.jpg" },
-    { title: "The Match Breaker", author: "Brian Krisna", category: "Fiksi", imageSrc: "foto/THE-MATCHBREAKER.jpg" },
+    { title: "Sisi Tergelap Surga", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/sisitergelap.jpeg" },
+    { title: "This Is Why I Need You", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/twih.jpg" },
+    { title: "Parable", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/parable.jpg" },
+    { title: "23:59", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/duatiga.jpg" },
+    { title: "Kudasai", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/kudasai.jpg" },
+    { title: "Seporsi Mie Ayam Sebelum Mati", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/mieayam.jpg" },
+    { title: "Bandung Menjelang Pagi", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/bandunng.jpg" },
+    { title: "The Match Breaker", author: "Brian Khrisna", category: "Fiksi", imageSrc: "foto/THE-MATCHBREAKER.jpg" },
     { title: "Galaksi", author: "Poppi Pertiwi", category: "Fiksi", imageSrc: "foto/galaksi.jpg" },
     { title: "Galaksi Kejora", author: "Poppi Pertiwi", category: "Fiksi", imageSrc: "foto/galaksikejora.jpg" },
+    { title: "Mariposa", author: "Luluk HF", category: "Fiksi", imageSrc: "foto/Mariposa.jpeg" },
     { title: "Mariposa 2 Part 1", author: "Luluk HF", category: "Fiksi", imageSrc: "foto/mariposa 2 part 1.jpg" },
     { title: "Mariposa 2 Part 2", author: "Luluk HF", category: "Fiksi", imageSrc: "foto/mariposa 2 part 2.avif" },
     { title: "Mada", author: "Gigrey", category: "Fiksi", imageSrc: "foto/mada.jpg" },
     { title: "Mahajana", author: "Gigrey", category: "Fiksi", imageSrc: "foto/mahajana.jpeg" },
     { title: "Teluk Alaska", author: "Eka Aryani", category: "Fiksi", imageSrc: "foto/telukalaska.jpg" },
     { title: "Malioboro", author: "Skysphire", category: "Fiksi", imageSrc: "foto/malioboro.jpeg" },
+    { title: "Dikta & Hukum", author: "Dhia'an Farah", category: "Fiksi", imageSrc: "foto/dikta.jpg" },
 
     // Non Fiksi
     { title: "The Art Of Stoicism", author: "Adora Kinara", category: "Non Fiksi", imageSrc: "foto/theart.jpeg" },
 
     // Wishlist
-    { title: "Sapiens", author: "Yuval Noah Harari", category: "Wishlist", bgCover: "linear-gradient(145deg, #d97706, #f59e0b)" },
+    { title: "Sapiens", author: "Yuval Noah Harari", category: "Wishlist", imageSrc: "foto/sapiens.jpeg" },
+    { title: "The Psychology Of Money", author: "Morgan Housel", category: "Wishlist", imageSrc: "foto/pykologiofmoney.jpg" },
+    { title: "The Warren Buffett Way", author: "Robert G. Hagstrom", category: "Wishlist", imageSrc: "foto/warrenway.jpg" },
+    { title: "Atomic Habits", author: "James Clear", category: "Wishlist", imageSrc: "foto/atomichabbit.jpg" },
+    { title: "Mariposa Masa Seandainya", author: "Luluk HF", category: "Wishlist", imageSrc: "foto/whatifmariposa.jpg" },
+    { title: "Aroma Karsa", author: "Dee Lestari", category: "Wishlist", imageSrc: "foto/aromakarsa.jpg" },
+    { title: "The Atala", author: "Lyraemoon", category: "Wishlist", imageSrc: "foto/atala.jpg" },
+    { title: "Berandal Bandung", author: "I.A.A. Djiiwaraga", category: "Wishlist", imageSrc: "foto/berandal bandung.jpg" },
+    { title: "Bandung After Rain", author: "Wulan Nur Amalia", category: "Wishlist", imageSrc: "foto/bandungafterrain.jpg" },
+    { title: "Setelah Melompat Aku Ingin Hidup", author: "Brian Khrisna", category: "Wishlist", imageSrc: "foto/setelah melompat.jpg" },
+    { title: "Kamar Nomor 7", author: "Hazzahrra", category: "Wishlist", imageSrc: "foto/kamarno7.jpg" },
   ];
 
   const bookListContainer = document.getElementById("bookListContainer");
@@ -33,7 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function tampilkanBuku(kategoriAktif) {
     const bukuSaring = BUKU.filter((b) => b.category === kategoriAktif);
 
-    document.getElementById("summaryCategoryLabel").textContent = "Koleksi " + kategoriAktif;
+    if (kategoriAktif === "Wishlist") {
+      document.getElementById("summaryCategoryLabel").textContent = ""; // Kosongkan label atas
+      document.getElementById("summaryTabHeading").textContent = "Daftar Wishlist";
+    } else {
+      document.getElementById("summaryCategoryLabel").textContent = "Koleksi " + kategoriAktif;
+      document.getElementById("summaryTabHeading").textContent = "Buku Terbaca";
+    }
+
     document.getElementById("bookCountBadge").textContent = bukuSaring.length + " Buku";
     bookListContainer.innerHTML = "";
 
