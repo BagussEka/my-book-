@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { title: "Atomic Habits", author: "James Clear", category: "Wishlist", imageSrc: "foto/atomichabbit.jpg" },
     { title: "Mariposa Masa Seandainya", author: "Luluk HF", category: "Wishlist", imageSrc: "foto/whatifmariposa.jpg" },
     { title: "Aroma Karsa", author: "Dee Lestari", category: "Wishlist", imageSrc: "foto/aromakarsa.jpg" },
-    { title: "The Atala", author: "Lyraemoon", category: "Wishlist", imageSrc: "foto/atala.jpg" },
+    { title: "The Atala", author: "Lyraemoon", category: "Wishlist", imageSrc: "foto/Atala.jpg" },
     { title: "Berandal Bandung", author: "I.A.A. Djiiwaraga", category: "Wishlist", imageSrc: "foto/berandal bandung.jpg" },
     { title: "Bandung After Rain", author: "Wulan Nur Amalia", category: "Wishlist", imageSrc: "foto/bandungafterrain.jpg" },
     { title: "Setelah Melompat Aku Ingin Hidup", author: "Brian Khrisna", category: "Wishlist", imageSrc: "foto/setelah melompat.jpg" },
